@@ -24,7 +24,6 @@ export function Earth(props) {
         const elapsedTime = clock.getElapsedTime();
         earthRef.current.rotation.y = elapsedTime / -10;
         cloudsRef.current.rotation.y = elapsedTime / -10;
-        moonRef.current.position.x = elapsedTime / 4;
         moonRef.current.rotation.y = elapsedTime / -4;
     });
 
@@ -40,7 +39,7 @@ export function Earth(props) {
             fade={true}
         />
         <mesh ref={cloudsRef} position={[0, -2, 0]}>
-            <sphereGeometry args={[1.045, 36, 36]} />
+            <sphereBufferGeometry args={[1, 64, 32]}/>
             <meshPhongMaterial
                 map={cloudsMap}
                 opacity={0.45} depthWrite={true} transparent={true} side={THREE.DoubleSide}
@@ -50,14 +49,37 @@ export function Earth(props) {
 
         </mesh>
         <mesh ref={earthRef} position={[0, -2, 0]}>
-            <sphereGeometry args={[1, 36, 36]} />
+            <sphereBufferGeometry args={[1, 64, 32]} />
             <meshPhongMaterial specularMap={specularMap} />
             <meshStandardMaterial
                 map={colorMap}
                 normalMap={normalMap}
+                widthSegments= {64}
+                heightSegments= {32}
                 metalness={0.5}
                 roughness={0.9}
             />
+            <OrbitControls
+                enableZoom={true}
+                enablePan={true}
+                enableRotate={true}
+                zoomSpeed={0.5}
+                panSpeed={0.2}
+                rotateSpeed={0.2}
+            />
+
+            
+            <mesh ref={moonRef} position={[-2, 0, -10]}>
+                <sphereBufferGeometry
+                    args={[1, 64, 32]}
+                    attach="geometry"
+                />
+                <meshStandardMaterial
+                    attach="material"
+                    map={moonMap}
+                    metalness={0.5}
+                    roughness={1}
+                />
             <OrbitControls
                 enableZoom={true}
                 enablePan={true}
@@ -68,22 +90,9 @@ export function Earth(props) {
             />
         </mesh>
 
-        <mesh ref={moonRef} position={[-10, 5, -10]}>
-            <sphereGeometry args={[1, 12, 12]} />
-            <meshStandardMaterial
-                map={moonMap}
-                metalness={0.5}
-                roughness={0.9}
-            />
-            <OrbitControls
-                enableZoom={true}
-                enablePan={true}
-                enableRotate={true}
-                zoomSpeed={0.5}
-                panSpeed={0.2}
-                rotateSpeed={0.2}
-            />
         </mesh>
+
+        
     </>
 
 }
