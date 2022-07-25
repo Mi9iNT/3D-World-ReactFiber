@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/3D-World-ReactFiber/static/css/main.2d06dc1f.css",
-    "main.js": "/3D-World-ReactFiber/static/js/main.b7aa239b.js",
+    "main.js": "/3D-World-ReactFiber/static/js/main.b2516189.js",
     "static/media/8k_earth_specular_map.jpg": "/3D-World-ReactFiber/static/media/8k_earth_specular_map.7b4efa59933b470e3776.jpg",
     "static/media/8k_earth_normal_map.jpg": "/3D-World-ReactFiber/static/media/8k_earth_normal_map.930cf2e99bc548140c29.jpg",
     "static/media/lune2K.jpg": "/3D-World-ReactFiber/static/media/lune2K.26419cb1ce4138a11aa9.jpg",
@@ -9,10 +9,10 @@
     "static/media/terre2K.jpg": "/3D-World-ReactFiber/static/media/terre2K.981cc3e3660e809249a3.jpg",
     "index.html": "/3D-World-ReactFiber/index.html",
     "main.2d06dc1f.css.map": "/3D-World-ReactFiber/static/css/main.2d06dc1f.css.map",
-    "main.b7aa239b.js.map": "/3D-World-ReactFiber/static/js/main.b7aa239b.js.map"
+    "main.b2516189.js.map": "/3D-World-ReactFiber/static/js/main.b2516189.js.map"
   },
   "entrypoints": [
     "static/css/main.2d06dc1f.css",
-    "static/js/main.b7aa239b.js"
+    "static/js/main.b2516189.js"
   ]
 }
